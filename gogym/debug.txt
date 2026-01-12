@@ -1,0 +1,3 @@
+[2026-01-12 00:56:25] SendMail() called
+[2026-01-12 00:56:25] PHPMailer exception: Invalid address:  (From): 
+[2026-01-12 00:56:25] ErrorInfo: Invalid address:  (From): 
