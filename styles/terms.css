@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: rgb(241, 241, 241);
+    --text: #111;
+
+    --accent: #b60000;
+    --accent-hover: #ff2a2a;
+
+    --footer-bg: #0f0f0f;
+    --footer-text: #eaeaea;
+
+    --muted: gray;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Alan Sans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#gogym-terms {
+    margin: 5rem 5rem 5rem 5rem;
+}
+
+#gogym-terms-title {
+    text-align: center;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+.gogym-terms-terms {
+    text-align: left;
+    word-spacing: 5px;
+    margin-left: 2rem;
+}
+
+#gogym-terms-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+}
+
+#gogym-terms-lastUpdate {
+    color: var(--muted);
+    text-align: center;
+}
+
+hr {
+    margin: 3rem 0 3rem 0;
+    border: none;
+    border-top: 1px solid var(--muted);
+}
+
+@media (max-width: 600px) {
+    #gogym-terms-header,
+    .gogym-terms-terms,
+    .gogym-terms-item {
+        text-align: center;
+        margin: 3rem 0 3rem 0;
+        padding: 0;
+        word-spacing: normal;
+    }
+}

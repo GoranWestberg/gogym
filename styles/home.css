@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: rgb(241, 241, 241);
+    --text: #111;
+
+    --accent: #b60000;
+    --accent-hover: #ff2a2a;
+
+    --footer-bg: #0f0f0f;
+    --footer-text: #eaeaea;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Alan Sans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Info section (Sobre nosotros) */
+
+#gogym-home-info {
+    text-align: center;
+    margin-top: 5rem;
+    padding: 0 1rem;
+}
+
+#gogym-home-info h1 {
+    font-size: 3rem;
+    margin: 0 0 1rem;
+}
+
+#gogym-home-info p {
+    margin: 0 auto;
+    max-width: 75ch;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+#gogym-home-info img {
+    max-width: min(50vw, 900px);
+    max-height: 50vh;
+    transition: transform 0.25s ease;
+    user-select: none;
+}
+
+#gogym-home-info img:hover {
+    transform: scale(1.05);
+}
+
+/* Image section (Entrenamientos) */
+
+#gogym-home-imgs {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gogym-home-imgs h1 {
+    font-size: 3rem;
+}
+
+#gogym-you-evolve {
+    transition: all 0.25s ease;
+    animation: transform-text 0.45s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    cursor: default;
+}
+
+@keyframes transform-text {
+    0% {
+        color: rgb(0, 0, 0);
+    }
+
+    10% {
+        color: rgb(30, 0, 0);
+    }
+
+    20% {
+        color: rgb(60, 0, 0);
+    }
+
+    30% {
+        color: rgb(90, 0, 0);
+    }
+
+    40% {
+        color: rgb(120, 0, 0);
+    }
+
+    50% {
+        color: rgb(150, 0, 0);
+    }
+
+    60% {
+        color: rgb(180, 0, 0);
+    }
+
+    70% {
+        color: rgb(210, 0, 0);
+    }
+
+    80% {
+        color: rgb(235, 0, 0);
+    }
+
+    90% {
+        color: rgb(245, 0, 0);
+    }
+
+    100% {
+        color: rgb(255, 0, 0);
+    }
+}
+
+.gogym-home-img-section {
+    position: relative;
+    width: 100%;
+    min-height: clamp(320px, 60vh, 900px);
+    background-image: url(../assets/media/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+
+    margin-top: 6rem;
+    padding: 4rem 2rem 5rem;
+}
+
+.gogym-home-img-section h1 {
+    color: #ff3d3d;
+    letter-spacing: 0.5px;
+    margin: 0 0 1rem;
+}
+
+.gogym-home-img-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.gogym-home-img-section>* {
+    position: relative;
+    z-index: 1;
+}
+
+.gogym-home-img-section p {
+    max-width: 900px;
+    margin: 1.5rem auto;
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+
+.gogym-home-img-section button {
+    margin-top: 2rem;
+    width: 12%;
+    min-width: 150px;
+    height: 3.5rem;
+
+    font-family: inherit;
+    color: white;
+    background-color: var(--accent);
+
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+
+    border: none;
+    border-radius: 6px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.gogym-home-img-section button:hover {
+    background-color: var(--accent-hover);
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+#contact-btn {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
