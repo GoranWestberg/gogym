@@ -37,28 +37,6 @@ CREATE TABLE `contact_forms` (
   `creation_date` datetime NOT NULL DEFAULT current_timestamp() COMMENT 'Form entry creation date'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `contact_forms`
---
-
-INSERT INTO `contact_forms` (`id`, `firstname`, `lastname`, `email`, `cellphone_number`, `message`, `creation_date`) VALUES
-(1, 'asdasdasd', 'asdasdasd', 'goran.westberg@thalamuscorp.com', '111111111111', 'asdasd', '2026-01-08 20:14:29'),
-(2, 'Goran', 'Westberg', 'goran.westberg@thalamuscorp.com', '113234273611', '', '2026-01-08 20:18:21'),
-(3, 'Goran', 'Westberg', 'goran.westberg@thalamuscorp.com', '113234273622', '', '2026-01-08 20:34:46'),
-(5, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdasd', '2026-01-10 16:46:48'),
-(6, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdasd', '2026-01-10 16:50:10'),
-(7, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdasdasd', '2026-01-10 16:50:32'),
-(8, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdasdasd', '2026-01-10 16:53:14'),
-(9, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'ASDASDASD', '2026-01-10 17:12:10'),
-(10, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdasdasd', '2026-01-10 17:13:40'),
-(11, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdasdasd', '2026-01-10 17:17:21'),
-(12, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdasd', '2026-01-10 17:18:01'),
-(13, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdasdasd', '2026-01-10 17:23:58'),
-(14, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdsad', '2026-01-10 17:24:54'),
-(15, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'dassadasd', '2026-01-10 17:26:05'),
-(16, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '113234273611', 'asdfsdafdsaf', '2026-01-10 17:58:40'),
-(17, 'Goran', 'Westberg', 'gorandirkwestberg@gmail.com', '1132342736', 'asdasd', '2026-01-10 20:51:08');
-
 -- --------------------------------------------------------
 
 --
@@ -78,14 +56,6 @@ CREATE TABLE `members` (
   `creation_date` datetime NOT NULL DEFAULT current_timestamp(),
   `cellphone` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `members`
---
-
-INSERT INTO `members` (`id`, `firstname`, `lastname`, `document_number`, `email`, `password`, `membership`, `membership_expiration`, `active`, `creation_date`, `cellphone`) VALUES
-(5, 'Goran', 'Westberg', '44640898', 'gorandirkwestberg@gmail.com', '$2y$10$Lml/auhnoSoICSxAiUdikeW907Y0T0HKGOYdZxyYrv9oFY0ZuuuRO', 'Bronce', '2026-02-11 23:13:32', 1, '2026-01-11 21:45:18', '1132342736');
-
 -- --------------------------------------------------------
 
 --
@@ -100,15 +70,6 @@ CREATE TABLE `password_resets` (
   `used` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `password_resets`
---
-
-INSERT INTO `password_resets` (`id`, `user_id`, `token_hash`, `expires_at`, `used`) VALUES
-(1, 5, 'd3295dc23446fc6665ff4458c0e71cd3286f71710318ddd751dfbfaf931a7619', '2026-01-12 04:29:30', 0),
-(2, 5, '7bb6f0bd8f6006e341438a8850dd20bcbc9c1a3669782617ca5598b6cff4259a', '2026-01-12 04:30:28', 0);
-
---
 -- Índices para tablas volcadas
 --
 
