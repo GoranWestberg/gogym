@@ -25,8 +25,6 @@ foreach ($values as $type => $value) {
 }
 
 if (empty($errors)) {
-    // Profe: Según ChatGPT si hago la query únicamente haciendo un select/insert y pasando los valores, me arriesgo a SQL Injections y errores, por lo que me recomendó hacerlo de esta forma
-
     $exists = mysqli_prepare(
         $connection,
         "SELECT id FROM members WHERE document_number = ? LIMIT 1"
@@ -102,5 +100,6 @@ if (empty($errors)) {
 
     header("Location: /views/register.php?error&$queryStrings");
 }
+
 
 mysqli_close($connection);
