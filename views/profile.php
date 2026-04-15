@@ -8,8 +8,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/profile.css">
-    <link rel="icon" href="/assets/media/webicon.png">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="icon" href="../assets/media/webicon.png">
     <title>GoGym | Mi perfil</title>
 </head>
 
@@ -52,7 +52,7 @@
                         <div id='gogym-profile-membership' style='background-color: $color;'>
                             <h2>Membresía</h2>
                             <p>Contás con la membresía {$_SESSION["membership"]}</p>
-                            <img id='gogym-profile-membership-image' src='/assets/media/member_$img.png'>
+                            <img id='gogym-profile-membership-image' src='../assets/media/member_$img.png'>
                         </div>";
                     } else {
                         echo "
@@ -64,7 +64,7 @@
                 ?>
             </div>
 
-            <form method="post" action="/src/logout.php">
+            <form method="post" action="../src/logout.php">
                 <button id="gogym-profile-logout" type="submit">Cerrar sesión</button>
             </form>
         </section>

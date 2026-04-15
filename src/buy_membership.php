@@ -8,7 +8,7 @@ HandleSession();
 $dni = $_SESSION["dni"];
 
 if (!isset($dni) || empty($dni)) {
-    header("Location: /views/auth.php?error&requireLogin");
+    header("Location: ../views/auth.php?error&requireLogin");
     exit;
 }
 
@@ -84,5 +84,5 @@ $_SESSION["membership"] = $selectedMembership;
 // Ejecuto la query
 $exec = mysqli_stmt_execute($stmt);
 
-header("Location: /views/catalog.php?success");
+header("Location: ../views/catalog.php?success");
 mysqli_close($connection);
