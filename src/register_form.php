@@ -39,17 +39,17 @@ if (empty($errors)) {
         $result = mysqli_stmt_get_result($exists);
         $retrieved = mysqli_fetch_assoc($result);
         if ($retrieved !== null) {
-            header("Location: /views/register.php?error&userAlreadyExists");
+            header("Location: ../views/register.php?error&userAlreadyExists");
             exit;
         }
     } else {
-        header("Location: /views/register.php?error&unknownError");
+        header("Location: ../views/register.php?error&unknownError");
         exit;
     }
 
     $password = $_POST["password"];
     if ($password !== $_POST["repassword"]) {
-        header("Location: /views/register.php?error&password=Las%20contraseñas%20no%20coinciden");
+        header("Location: ../views/register.php?error&password=Las%20contraseñas%20no%20coinciden");
         exit;
     }
 
@@ -88,9 +88,9 @@ if (empty($errors)) {
         "GoGym";
         SendMail($values['email'], $subject, $message);
 
-        header("Location: /views/register.php?ok");
+        header("Location: ../views/register.php?ok");
     } else {
-        header("Location: /views/register.php?error&unknownError");
+        header("Location: ../views/register.php?error&unknownError");
     }
 } else {
     $queryStrings = "";
@@ -98,7 +98,7 @@ if (empty($errors)) {
         $queryStrings = $queryStrings . $key . "=" . $error . "&";
     }
 
-    header("Location: /views/register.php?error&$queryStrings");
+    header("Location: ../views/register.php?error&$queryStrings");
 }
 
 

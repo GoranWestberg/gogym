@@ -30,20 +30,20 @@ if (empty($errors)) {
     $check = mysqli_stmt_execute($exists);
 
     if (!$check) {
-        header("Location: /views/auth.php?error&unknownError");
+        header("Location: ../views/auth.php?error&unknownError");
         exit;
     }
 
     $result = mysqli_stmt_get_result($exists);
     $retrieved = mysqli_fetch_assoc($result);
     if ($retrieved === null) {
-        header("Location: /views/auth.php?error&userDoesNotExist");
+        header("Location: ../views/auth.php?error&userDoesNotExist");
         exit;
     }
 
     $userActive = $retrieved["active"];
     if (isset($userActive) && $userActive === 0) {
-        header("Location: /views/auth.php?error&inactiveUser");
+        header("Location: ../views/auth.php?error&inactiveUser");
         exit;
     }
 
@@ -51,7 +51,7 @@ if (empty($errors)) {
     $password = $_POST["password"];
 
     if (!password_verify($password, $storedPw)) {
-        header("Location: /views/auth.php?error&badPassword");
+        header("Location: ../views/auth.php?error&badPassword");
         exit;
     }
 
@@ -73,11 +73,11 @@ if (empty($errors)) {
     $_SESSION["membership"]     = $membership     ?? "";
     $_SESSION["membership_exp"] = $membership_exp ?? "";
 
-    header("Location: /views/profile.php?success");
+    header("Location: ../views/profile.php?success");
     exit;
 } else {
     $queryStrings = http_build_query($errors);
-    header("Location: /views/auth.php?error&" . $queryStrings);
+    header("Location: ../views/auth.php?error&" . $queryStrings);
     exit;
 }
 

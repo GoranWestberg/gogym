@@ -23,7 +23,7 @@ foreach ($values as $type => $value) {
 
 if (!empty($errors)) {
     $queryStrings = http_build_query($errors);
-    header("Location: /views/contact.php?error&" . $queryStrings);
+    header("Location: ../views/contact.php?error&" . $queryStrings);
     exit;
 }
 
@@ -56,9 +56,9 @@ if ($exec) {
         SendMail($values['email'], $subject, $message);
     }
 
-    header("Location: /views/contact.php?ok");
+    header("Location: ../views/contact.php?ok");
     exit;
 }
 
-header("Location: /views/contact.php?error&unknownError");
+header("Location: ../views/contact.php?error&unknownError");
 exit;

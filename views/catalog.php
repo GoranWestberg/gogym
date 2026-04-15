@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/catalog.css">
-    <link rel="icon" href="/assets/media/webicon.png">
+    <link rel="stylesheet" href="../styles/catalog.css">
+    <link rel="icon" href="../assets/media/webicon.png">
     <title>GoGym | Membresías</title>
 </head>
 <body>
@@ -35,7 +35,7 @@
                     <input type="hidden" name="plan" value="Bronce">
 
                     <button type="submit" class="gogym-membership column" id="gogym-membership-bronze">
-                        <img src="/assets/media/member_bronze.png" alt="GoGym Membership">
+                        <img src="../assets/media/member_bronze.png" alt="GoGym Membership">
                         <div class="gogym-membership info">
                             <h2>Membresía de acceso Bronce</h2>
                             <h3>Con esta membresía tenés acceso a:</h3>
@@ -52,11 +52,11 @@
                     </button>
                 </form>
 
-                <form method="post" action="/src/buy_membership.php" class="gogym-membership-form">
+                <form method="post" action="../src/buy_membership.php" class="gogym-membership-form">
                     <input type="hidden" name="plan" value="Plata">
 
                     <button type="submit" class="gogym-membership column" id="gogym-membership-silver">
-                        <img src="/assets/media/member_silver.png" alt="GoGym Membership">
+                        <img src="../assets/media/member_silver.png" alt="GoGym Membership">
                         <div class="gogym-membership info">
                             <h2>Membresía de acceso Plata</h2>
                             <h3>Con esta membresía tenés acceso a:</h3>
@@ -75,11 +75,11 @@
                     </button>
                 </form>
 
-                <form method="post" action="/src/buy_membership.php" class="gogym-membership-form">
+                <form method="post" action="../src/buy_membership.php" class="gogym-membership-form">
                     <input type="hidden" name="plan" value="Oro">
 
                     <button type="submit" class="gogym-membership column" id="gogym-membership-gold">
-                        <img src="/assets/media/member_gold.png" alt="GoGym Membership">
+                        <img src="../assets/media/member_gold.png" alt="GoGym Membership">
                         <div class="gogym-membership info">
                             <h2>Membresía de acceso Oro</h2>
                             <h3>Con esta membresía tenés acceso a:</h3>

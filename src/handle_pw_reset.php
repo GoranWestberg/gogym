@@ -7,7 +7,7 @@ require_once __DIR__ . '/phpmailer.php';
 $dni = $_POST["document_number"];
 
 if (ValidateValue($dni, "document_number", $requirements) !== null) {
-  header("Location: /views/forgot-pwd.php?error&document_number=El formato del DNI es inválido");
+  header("Location: ../views/forgot-pwd.php?error&document_number=El formato del DNI es inválido");
   exit;
 }
 
@@ -20,7 +20,7 @@ $stmt = mysqli_prepare($connection, "
 mysqli_stmt_bind_param($stmt, "s", $dni);
 
 if (!mysqli_stmt_execute($stmt)) {
-    header("Location: /views/forgot-pwd.php?error&unknownError");
+    header("Location: ../views/forgot-pwd.php?error&unknownError");
     exit;
 }
 
@@ -28,7 +28,7 @@ $result = mysqli_stmt_get_result($stmt);
 $user = mysqli_fetch_assoc($result);
 
 if (!$user) {
-  header("Location: /views/forgot-pwd.php?error&userDoesNotExist");
+  header("Location: ../views/forgot-pwd.php?error&userDoesNotExist");
   exit;
 }
 
@@ -46,7 +46,7 @@ $stmt2 = mysqli_prepare($connection, "
 mysqli_stmt_bind_param($stmt2, "iss", $userId, $tokenHash, $expiresAt);
 
 if (!mysqli_stmt_execute($stmt2)) {
-    header("Location: /views/forgot-pwd.php?error&unknownError");
+    header("Location: ../views/forgot-pwd.php?error&unknownError");
     exit;
 }
 
@@ -58,5 +58,5 @@ SendMail(
     "Usá este link para recuperar tu contraseña:\n\n$link\n\nEste link expira en 1 hora."
 );
 
-header("Location: /views/forgot-pwd.php?success");
+header("Location: ../views/forgot-pwd.php?success");
 exit;

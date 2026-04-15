@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/home.css">
-    <link rel="icon" href="/assets/media/webicon.png">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="icon" href="../assets/media/webicon.png">
     <title>GoGym | Inicio</title>
 </head>
 <body>
-    <?php include './components/header.php' ?>
+    <?php include '../components/header.php' ?>
 
     <main>
         <section id="gogym-home-info">
             <h1>Sobre nosotros</h1>
 
-            <img src="/assets/media/gogym.png" alt="GoGym Logo">
+            <img src="../assets/media/gogym.png" alt="GoGym Logo">
 
             <p>
                 GoGym es un espacio pensado para que entrenes con propósito.
@@ -44,16 +44,16 @@
 
                 <h2>¿Te convencimos? Accedé a las membresías que tenemos y averiguá cuál es más acorde a tus necesidades:</h2>
 
-                <button onclick="window.location.href='./views/catalog.php'">Ver membresías</button>
+                <button onclick="window.location.href='../views/catalog.php'">Ver membresías</button>
 
                 <h2>¿Te quedaron dudas? Contactá con nosotros a través del siguiente formulario:</h2>
 
-                <button id="contact-btn" onclick="window.location.href='./views/contact.php'">Contactarse</button>
+                <button id="contact-btn" onclick="window.location.href='../views/contact.php'">Contactarse</button>
             </div>
         </section>
     </main>
 
 
-    <?php include './components/footer.php' ?>
+    <?php include '../components/footer.php' ?>
 </body>
 </html>

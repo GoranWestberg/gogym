@@ -8,13 +8,13 @@ $BASE_URL = ""; // raíz del dominio
 <header>
     <nav>
         <ul id="gogym-header">
-            <li><a href="<?= $BASE_URL ?>/index.php">Inicio</a></li>
-            <li><a href="<?= $BASE_URL ?>/views/catalog.php">Membresías</a></li>
+            <li><a href="<?= $BASE_URL ?>../gogym/index.php">Inicio</a></li>
+            <li><a href="<?= $BASE_URL ?>../views/catalog.php">Membresías</a></li>
             <li>
                 <?php if (IsLoggedIn()): ?>
-                    <a href="<?= $BASE_URL ?>/views/profile.php">Mi perfil</a>
+                    <a href="<?= $BASE_URL ?>../views/profile.php">Mi perfil</a>
                 <?php else: ?>
-                    <a href="<?= $BASE_URL ?>/views/auth.php">Autenticarse</a>
+                    <a href="<?= $BASE_URL ?>../views/auth.php">Autenticarse</a>
                 <?php endif; ?>
             </li>
         </ul>

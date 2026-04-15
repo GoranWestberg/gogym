@@ -8,17 +8,17 @@ $password = $_POST["password"] ?? "";
 $repassword = $_POST["repassword"] ?? "";
 
 if (empty($token)) {
-    header("Location: /views/recover-pwd.php?error&unknownError");
+    header("Location: ../views/recover-pwd.php?error&unknownError");
     exit;
 }
 
 if (ValidateValue($password, "password", $requirements) !== null) {
-    header("Location: /views/recover-pwd.php?token=" . urlencode($token) . "&error&password=El formato de la contraseña es inválido");
+    header("Location: ../views/recover-pwd.php?token=" . urlencode($token) . "&error&password=El formato de la contraseña es inválido");
     exit;
 }
 
 if ($password !== $repassword) {
-    header("Location: /views/recover-pwd.php?token=" . urlencode($token) . "&error&password_repeat=Las contraseñas no coinciden");
+    header("Location: ../views/recover-pwd.php?token=" . urlencode($token) . "&error&password_repeat=Las contraseñas no coinciden");
     exit;
 }
 
@@ -33,7 +33,7 @@ $stmt = mysqli_prepare($connection, "
 mysqli_stmt_bind_param($stmt, "s", $tokenHash);
 
 if (!mysqli_stmt_execute($stmt)) {
-    header("Location: /views/forgot-pwd.php?token=" . urlencode($token) . "&error&unknownError");
+    header("Location: ../views/forgot-pwd.php?token=" . urlencode($token) . "&error&unknownError");
     exit;
 }
 
@@ -41,18 +41,18 @@ $result = mysqli_stmt_get_result($stmt);
 $reset = mysqli_fetch_assoc($result);
 
 if (!$reset) {
-    header("Location: /views/forgot-pwd.php?error&invalidToken");
+    header("Location: ../views/forgot-pwd.php?error&invalidToken");
     exit;
 }
 
 if ((int)$reset["used"] === 1) {
-    header("Location: /views/forgot-pwd.php?error&tokenUsed");
+    header("Location: ../views/forgot-pwd.php?error&tokenUsed");
     exit;
 }
 
 $expiresAt = $reset["expires_at"] ?? null;
 if (empty($expiresAt) || strtotime($expiresAt) < time()) {
-    header("Location: /views/forgot-pwd.php?error&tokenExpired");
+    header("Location: ../views/forgot-pwd.php?error&tokenExpired");
     exit;
 }
 
@@ -67,7 +67,7 @@ $stmt2 = mysqli_prepare($connection, "
 mysqli_stmt_bind_param($stmt2, "si", $newHash, $userId);
 
 if (!mysqli_stmt_execute($stmt2)) {
-    header("Location: /views/forgot-pwd.php?token=" . urlencode($token) . "&error&unknownError");
+    header("Location: ../views/forgot-pwd.php?token=" . urlencode($token) . "&error&unknownError");
     exit;
 }
 
@@ -82,5 +82,5 @@ mysqli_stmt_execute($stmt3);
 
 mysqli_close($connection);
 
-header("Location: /views/auth.php?success&passwordChanged");
+header("Location: ../views/auth.php?success&passwordChanged");
 exit;

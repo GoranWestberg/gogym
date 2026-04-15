@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/auth.css">
-    <link rel="icon" href="/assets/media/webicon.png">
+    <link rel="stylesheet" href="../styles/auth.css">
+    <link rel="icon" href="../assets/media/webicon.png">
     <title>GoGym | Autenticación</title>
 </head>
 <body>
@@ -17,13 +17,13 @@
             <p>Autenticate con tus credenciales.</p>
             <p>Si aún no estás registrado, por favor registrate desde el botón que se encuentra al final de esta página.</p>
 
-            <form id="gogym-auth-form" method="post" action="/src/auth_form.php">
+            <form id="gogym-auth-form" method="post" action="../src/auth_form.php">
                 <h3 class="gogym-auth-form-label">Usuario</h3>
                 <input type="text" placeholder="Número de documento" inputmode="numeric" id="document_number" name="document_number">
                 <div class="gogym-auth-form-error-space">
                     <?php
                         if (isset($_GET["document_number"])) {
-                            echo '<h4 class="gogym-auth-form-error">' . str_replace("document_number", "Usuario", $_GET["password"]) . '</h4>';
+                            echo '<h4 class="gogym-auth-form-error">' . str_replace("document_number", "Usuario", $_GET["document_number"]) . '</h4>';
                         }
                     ?>
                 </div>

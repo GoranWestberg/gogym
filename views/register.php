@@ -9,8 +9,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/register.css">
-    <link rel="icon" href="/assets/media/webicon.png">
+    <link rel="stylesheet" href="../styles/register.css">
+    <link rel="icon" href="../assets/media/webicon.png">
     <title>GoGym | Registro</title>
 </head>
 <body>
@@ -20,7 +20,7 @@
         <h1 id="gogym-register-title">Registro</h1>
         <p id="gogym-register-desc">Completá los datos debajo y creá tu perfil</p>
 
-        <form action="/src/register_form.php" id="gogym-register-form" method="post">
+        <form action="../src/register_form.php" id="gogym-register-form" method="post">
             <div id="gogym-register-form-fields">
                 <div id="gogym-register-form-fields-info">
                     <div id="gogym-register-form-fields-left">
